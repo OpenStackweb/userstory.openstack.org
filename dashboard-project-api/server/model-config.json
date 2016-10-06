@@ -14,7 +14,7 @@
     ]
   },
   "UserStory": {
-    "dataSource": "db"
+    "dataSource": "mongodbConnect"
   },
   "AccessToken": {
     "dataSource": "db",

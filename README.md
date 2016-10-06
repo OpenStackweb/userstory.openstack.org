@@ -10,15 +10,15 @@ This dashboard will leverage user story trackers to associate cross-project spec
 
 ## Installation
 
-##### Install MongoDB
+##### Install and Run MongoDB
 https://docs.mongodb.org/manual/installation/
 
 ##### Install Node.js and npm
 https://nodejs.org/en/download/
 
-For Ubuntu: 
+For Ubuntu:
 ```
-  $ sudo apt-get install nodejs 
+  $ sudo apt-get install nodejs
   $ sudo apt-get install nodejs-legacy
   $ sudo apt-get install npm
 ```
@@ -26,20 +26,45 @@ For Ubuntu:
 ##### Install Strongloop + Grunt + Bower
 ```
 $ sudo npm install -g strongloop
-$ sudo npm install -g grunt-cli 
+$ sudo npm install -g grunt-cli
 $ sudo npm install -g bower
 ```
 
 ##### Clone the repository
 ```
-$ git clone https://github.com/OpenStackweb/userstory.openstack.org.git 
+$ git clone https://github.com/OpenStackweb/userstory.openstack.org.git
+```
+
+##### Database
+
+Creates a database and import the UserStory collection
+
+```
+$ cd dashboard-project-api/db
+$ mongoimport --db <name-database> --collection UserStory --file UserStory.json
+```
+
+##### Configure MongoDB
+
+In the file dashboard-project-api/server/datasources.json, modify the variable mongodbConnect to add the data of your server
+
+```
+"mongodbConnect": {
+    ...
+    "host": "localhost",
+    "port": 27017,
+    "database": "dashboard-dev",
+    "username": "myUser",
+    "password": "mySuperSecretPass"
+  }
+
 ```
 
 ##### Running the API
 ```
 $ cd dashboard-project-api/
 $ npm install
-$ npm run build-sdk  
+$ npm run build-sdk
 $ node .
 ```
 You should get something like this:

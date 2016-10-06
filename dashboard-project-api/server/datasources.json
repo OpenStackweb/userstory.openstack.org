@@ -3,6 +3,15 @@
     "name": "db",
     "connector": "memory"
   },
+  "mongodbConnect": {
+    "name": "mongodbConnect",
+    "connector": "mongodb",
+    "host": "localhost",
+    "port": 27017,
+    "database": "name-database",
+    "username": "",
+    "password": ""
+  },
   "Patch": {
     "name": "Patch",
     "connector": "rest",

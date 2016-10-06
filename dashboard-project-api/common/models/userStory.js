@@ -318,7 +318,7 @@ module.exports = function(UserStory) {
 
   UserStory.on('attached',function(){
 
-    UserStory.findById = function(id, params, cb){
+    /*UserStory.findById = function(id, params, cb){
 
       async.waterfall([
         parseUserStory(id),
@@ -413,7 +413,7 @@ module.exports = function(UserStory) {
         ]);
 
 
-    }
+    }*/
   })
 
 };
